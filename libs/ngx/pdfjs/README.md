@@ -8,7 +8,7 @@ Please note that this is not production ready. Continue at your own risk :).
 ## Usage
 
 ```console
-npm install @felixdulfer/ngx-pdfjs
+npm install @felixdulfer/ngx-pdfjs pdfjs-dist
 ```
 
 ## Running unit tests
