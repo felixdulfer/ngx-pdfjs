@@ -51,7 +51,9 @@
               "apps/ngx-pdfjs-app/src/favicon.ico",
               "apps/ngx-pdfjs-app/src/assets"
             ],
-            "styles": ["apps/ngx-pdfjs-app/src/styles.scss"],
+            "styles": [
+              "apps/ngx-pdfjs-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -112,7 +114,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/ngx-pdfjs-app"],
+          "outputs": [
+            "coverage/apps/ngx-pdfjs-app"
+          ],
           "options": {
             "jestConfig": "apps/ngx-pdfjs-app/jest.config.js",
             "passWithNoTests": true
@@ -141,7 +145,48 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/ngx-pdfjs-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/ngx-pdfjs-app-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-pdfjs": {
+      "projectType": "library",
+      "root": "libs/ngx/pdfjs",
+      "sourceRoot": "libs/ngx/pdfjs/src",
+      "prefix": "ngx-pdfjs",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/ngx/pdfjs/tsconfig.lib.json",
+            "project": "libs/ngx/pdfjs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ngx/pdfjs/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngx/pdfjs/src/**/*.ts",
+              "libs/ngx/pdfjs/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/ngx/pdfjs"
+          ],
+          "options": {
+            "jestConfig": "libs/ngx/pdfjs/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
